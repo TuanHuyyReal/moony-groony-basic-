@@ -1,0 +1,207 @@
+:root {
+  --bg-color: #133e87;
+  --text-color: #cbdceb;
+  --shadow-color: #608bc1;
+  --high-contrast-color: #f3f3e0;
+  --low-contrast-color: #597b8faf;
+  --white: #fff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#heading {
+  background-color: var(--shadow-color);
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100vw;
+  border-radius: 999px 15px 15px 999px;
+  margin-bottom: 2%;
+  box-shadow: 0 0 10px var(--shadow-color);
+  position: relative;
+}
+#logo {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  max-width: 90%;
+  display: inline-block;
+  transform: translate(-15%, 0);
+}
+#web-main-title {
+  font-weight: 700;
+  font-size: 120%;
+  width: 200px;
+  position: relative;
+  right: 30%;
+  display: block;
+  color: var(--high-contrast-color);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 10px;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  flex-grow: 2;
+  flex-wrap: wrap;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 100%;
+  cursor: pointer;
+  border: var(--text-color) 1px solid;
+  padding: 9px;
+  border-radius: 5px;
+}
+nav ul li a:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transition: 0.3s ease-in-out;
+}
+nav ul li a:not(:hover) {
+  transition: 0.3s ease-in-out;
+}
+
+.items-container {
+  width: 100%;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.items-container .items-list {
+  display: inline-flex;
+  margin: auto 0;
+}
+.items-container .items-list .items {
+  display: inline-flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--shadow-color);
+  padding: 50px 20px 70px;
+  margin: 50px 20px;
+  border: 2px solid var(--shadow-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--shadow-color);
+  max-width: 30%;
+  min-width: 200px;
+  max-height: 50%;
+  position: relative;
+  overflow-y: hidden;
+}
+.items-container .items-list .items img {
+  width: 60%;
+  height: 80%;
+  border-radius: 10px;
+}
+
+.items-container .items-list .items p.items-info {
+  display: inline;
+  position: relative;
+  margin: auto 0;
+  text-align: left;
+  line-height: 20px;
+  text-wrap: wrap;
+  cursor: default;
+  word-break: break-all;
+}
+.items-container .items-list .items p.price {
+  text-align: center;
+  background-color: var(--high-contrast-color);
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--bg-color);
+  font-weight: 700;
+  position: absolute;
+  bottom: 2%;
+  cursor: pointer;
+}
+.items-container .items-list .items p.price:hover {
+  background-color: var(--low-contrast-color);
+  color: var(--high-contrast-color);
+  transition: 0.2s ease-in-out;
+}
+.items-container .items-list .items p.price:not(:hover) {
+  transition: 0.5s ease-in-out;
+}
+
+/*nếu thầy cần thì bật @media lên nha thầy :) 
+  tại em thấy trong trắc nghiệm có đề cập đến media nên e nghĩ sẽ dùng
+  nên em lỡ tay code luôn @media 
+*/
+
+ @media only screen and (max-width: 735px) {
+  #web-main-title {
+    display: none;
+  }
+  nav ul {
+    justify-content: center;
+    position: relative;
+    right: 5%;
+  }
+  .items-container .items-list {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .items-container .items-list .items {
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 90%;
+    width: 90%;
+    flex-grow: 1;
+    height: 40%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .items img {
+    position: relative;
+    left: -4%;
+    right: 20%;
+  }
+  .items p.items-info {
+    width: 20%;
+    margin-left: 0;
+  }
+  .items p.price {
+    left: 25%;
+    margin-bottom: 25px;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  #heading #web-main-title {
+    right: 10%;
+  }
+  .items-container .items-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .items-container .items-list .items {
+    min-width: 40%;
+  }
+} 
